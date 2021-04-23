@@ -80,6 +80,8 @@ class Canvas(FigureCanvas):
         self.timestamp = {}
         self.setParent(parent)
 
+        #code for the signal example was found from https://dev.to/tkkhhaarree/track-windows-app-usage-time-using-python-h9h
+
     def signalExample(self, text, number):
         current_app = psutil.Process(win32process.GetWindowThreadProcessId(GetForegroundWindow())[1]).name().replace(".exe", "")
         self.timestamp[current_app] = int(time.time())
